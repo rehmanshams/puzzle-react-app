@@ -111,7 +111,7 @@ export default function Puzzle() {
                     <span></span>
                     <span></span>
                     <span></span>
-                    <p className=" cursor-move text-center font-bold align-center mt-[-5px]  w-full animate-charcter">
+                    <p className=" cursor-move text-center font-normal align-center mt-[-5px]  w-full animate-charcter">
                       {_number}
                     </p>
                   </div>
