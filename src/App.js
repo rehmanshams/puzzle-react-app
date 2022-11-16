@@ -1,7 +1,11 @@
 import { useRef, useState } from "react";
+import WelcomeModal from "./model"
 export default function Puzzle() {
   //         //        //
+  const [welcome, setwelcomemodel] = useState(false);
+  //         //        //
   const dragItem = useRef();
+  //         //        //
   const dragOverItem = useRef();
   //         //        //
   const dragStart = (e, position) => {
@@ -20,6 +24,15 @@ export default function Puzzle() {
     dragItem.current = null;
     dragOverItem.current = null;
     setsize(copyListItems);
+    let getarray = [];
+    for (let index = 0; index < copyListItems.length; index++) {
+      if (index == copyListItems[index]) {
+        getarray.push(copyListItems[index]);
+      }
+      if (getarray.length == copyListItems.length) {
+        setwelcomemodel(true);
+      }
+    }
   };
   //         //        //
   const [gridsize, setgridsize] = useState("");
@@ -48,6 +61,9 @@ export default function Puzzle() {
     <>
       <div className="container mx-auto flex flex-col justify-center items-center max-w-[1024px] w-full">
         <div className=" border-gray-400 bg-white pb-10 rounded-md border-[1px] mt-32 h-full w-[800px]">
+          {welcome ? (
+            <WelcomeModal setwelcomemodel={setwelcomemodel} setsize={setsize} />
+          ) : null}
           <div className="flex justify-center flex-col mt-24 w-full">
             <div className="w-full flex justify-center">
               <img
@@ -57,10 +73,11 @@ export default function Puzzle() {
             </div>
             <div className="w-full flex justify-center">
               <form
-                onSubmit={(ali) => {
-                  createHandler(ali);
+                onSubmit={(onsubmit_handler) => {
+                  createHandler(onsubmit_handler);
                 }}
               >
+                {}
                 <div className="w-full">
                   <input
                     className="border-black   w-[450px] h-10 shadow-lg shadow-gray-300/50 rounded-md text-2xl pl-4 font-thin border-[1px]"
@@ -100,7 +117,7 @@ export default function Puzzle() {
               {size.map((_number, idx) => {
                 return (
                   <div
-                    className="text-sm font-xl rounded-lg animated-button1 bg-white cursor-move  w-full max-w-[150px] h-full  flex justify-center  container mx-auto"
+                    className="text-sm  font-xl rounded-lg animated-button1 bg-white cursor-move  w-full max-w-[150px] h-full  flex justify-center  container mx-auto"
                     key={idx * 1000 * Math.random()}
                     onDragStart={(e) => dragStart(e, idx)}
                     onDragEnter={(e) => dragEnter(e, idx)}
