@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
-import WelcomeModal from "./model"
+import Modal from "./model";
+
 export default function Puzzle() {
   //         //        //
   const [welcome, setwelcomemodel] = useState(false);
@@ -62,7 +63,7 @@ export default function Puzzle() {
       <div className="container mx-auto flex flex-col justify-center items-center max-w-[1024px] w-full">
         <div className=" border-gray-400 bg-white pb-10 rounded-md border-[1px] mt-32 h-full w-[800px]">
           {welcome ? (
-            <WelcomeModal setwelcomemodel={setwelcomemodel} setsize={setsize} />
+            <Modal setwelcomemodel={setwelcomemodel} setsize={setsize} />
           ) : null}
           <div className="flex justify-center flex-col mt-24 w-full">
             <div className="w-full flex justify-center">

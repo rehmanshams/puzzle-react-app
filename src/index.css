@@ -164,6 +164,23 @@ p {
 .fourth:hover {
   background-position: 0;
 }
+.fiveth {
+  border-color: black;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    #030303 50%,
+    transparent 50%
+  );
+  background-image: linear-gradient(45deg, #030303 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 800ms ease-in-out;
+  width: 96px;
+}
+.fiveth:hover {
+  background-position: 0;
+}
 .animated-button {
   background: linear-gradient(-30deg, #0b1b3d 50%, #08142b 50%);
   padding: 20px 40px;
