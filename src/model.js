@@ -19,19 +19,19 @@ const Model = () => {
         <div className="fixed inset-0 bg-zinc-500 bg-opacity-70 transition-opacity"></div>
         <div className="fixed inset-0 overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4 text-center  ">
-        <span id="rewardId" />
-            <div className="w-full max-w-[290px] transform overflow-hidden rounded-lg bg-white shadow-xl transition-all ">
+            <span id="rewardId" />
+            <div className="w-full max-w-[420px] transform overflow-hidden rounded-lg bg-white shadow-xl transition-all ">
               <div className="relative px-[32px] py-[24px]">
                 <div className="flex flex-col max-w-[350px] items-center justify-center w-full">
-                  <h1 className="pt-1  font-thin text-black text-[18px] ">
+                  <h1 className="pt-1  font-thin tracking-widest	 text-black text-[18px] ">
                     Congratulations
                     <br /> You Win The Game
                   </h1>
-                  <button 
+                  <button
                     onClick={() => {
                       window.location.replace("/");
                     }}
-                    className="border-black w-24 text-black hover:text-white fiveth mt-2 rounded-md bg-transparent cursor border-[1px]"
+                    className="border-black w-24 text-black hover:text-white fiveth mt-6 rounded-md bg-transparent cursor border-[1px]"
                   >
                     Back
                   </button>

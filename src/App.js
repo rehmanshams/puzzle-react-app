@@ -55,7 +55,7 @@ export default function Puzzle() {
           return -1;
         }
       })
-      .map((h) => h.value);
+      .map((puzzle_maping) => puzzle_maping.value);
     setsize(array);
   };
   return (
